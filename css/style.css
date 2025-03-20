@@ -70,38 +70,48 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 42px;
+    font-size: 2.5rem; /* Адаптивный размер */
     font-weight: 800;
     text-align: center;
     animation: fadeIn 1s ease-in-out;
 }
 
 h2 {
-    font-size: 36px;
+    font-size: 2rem; /* Адаптивный размер */
     font-weight: 800;
     text-align: center;
 }
 
 h3 {
-    font-size: 28px;
+    font-size: 1.5rem; /* Адаптивный размер */
     font-weight: 700;
     margin-bottom: 15px;
 }
 
 h4 {
-    font-size: 24px;
+    font-size: 1.25rem; /* Адаптивный размер */
     font-weight: 700;
     margin-bottom: 10px;
 }
 
 p {
-    font-size: 18px;
+    font-size: 1rem; /* Адаптивный размер */
     margin-bottom: 20px;
     font-weight: 500;
     color: #555;
 }
 
-
+/* Анимация для заголовка */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
 
 /* Стили для разделов */
 .curs-opis, .curs-kogo {
@@ -160,6 +170,7 @@ footer p {
     font-weight: 500;
     color: aqua;
 }
+
 /* Стили для навигации по курсам */
 .teoria-nav {
     display: flex;
@@ -185,9 +196,10 @@ footer p {
     transform: translateY(-5px);
 }
 
-.info a{
-color: aqua;
+.info a {
+    color: aqua;
 }
+
 /* Стили для раздела "Проекты C#" */
 .c#primer {
     padding: 60px 20px;
@@ -239,4 +251,83 @@ color: aqua;
 .project img:hover {
     transform: scale(1.1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    header .logo {
+        margin-bottom: 15px;
+    }
+
+    header .nav-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.75rem;
+    }
+
+    h3 {
+        font-size: 1.25rem;
+    }
+
+    p {
+        font-size: 0.9rem;
+    }
+
+    .teoria-nav {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .teoria-nav a {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .project img {
+        height: 150px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.75rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.1rem;
+    }
+
+    p {
+        font-size: 0.85rem;
+    }
+
+    .teoria-nav a {
+        padding: 8px 15px;
+        font-size: 14px;
+    }
+
+    .project img {
+        height: 120px;
+    }
 }
